@@ -1,15 +1,24 @@
 domain: io
-layout: go.kubebuilder.io/v2
+layout:
+- go.kubebuilder.io/v2
+plugins:
+  go.sdk.operatorframework.io/v2-alpha: {}
 projectName: operator
 repo: github.com/grafana/k6-operator
 resources:
--
-  controller: true
+- controller: true
   domain: io
   group: k6
   kind: K6
   path: github.com/grafana/k6-operator/api/v1alpha1
   version: v1alpha1
+- api:
+    crdVersion: v1beta1
+    namespaced: true
+  controller: true
+  domain: io
+  group: k6
+  kind: K6Suite
+  path: github.com/grafana/k6-operator/api/v1alpha1
+  version: v1alpha1
 version: "3"
-plugins:
-  go.sdk.operatorframework.io/v2-alpha: {}

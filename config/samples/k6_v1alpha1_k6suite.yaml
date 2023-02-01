@@ -1,0 +1,6 @@
+apiVersion: k6.io/v1alpha1
+kind: K6Suite
+metadata:
+  name: k6suite-sample
+spec:
+  # TODO(user): Add fields here
